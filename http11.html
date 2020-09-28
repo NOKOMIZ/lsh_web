@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<body>
+    <script language="JavaScript">
+        var text;
+
+        function func1() {
+            var ani, flen, text, i;
+            ani = ["만창", "애니", "영상", "컴게"];
+            fLen = ani.length;
+            text = "<ul>"
+            for (i = 0; i < fLen; i++) {
+                text += "<li>" + ani[i] + "</li>";
+            }
+            text += "</ul>";
+            document.getElementById('func1').innerHTML = text;
+        }
+
+
+        function func2() {
+            var ani = ["만창", "애니", "영상", "컴게"];
+            text = "<ul>";
+            ani.forEach(myFunction);
+            text += "</ul>";
+            document.getElementById('func2').innerHTML = text;
+
+        }
+
+        function myFunction(value) {
+            text += "<li>" + value + "</li>";
+        }
+
+    </script>
+    <button type="button" onclick="func1()">Using 'for'</button>
+    <button type="button" onclick="func2()">Using 'foreach'</button>
+    <br><br>
+    <p id="func1"></p><br><br>
+    <p id="func2"></p>
+</body>
+
+</html>
