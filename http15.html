@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> 오늘의 과제 </title>
+    <meta charset="utf-8">
+    <script>
+        var startTime, timer;
+
+        function start() {
+            startTime = new Date();
+            timer = setInterval(time, 1000);
+            setInterval(func1, 5000);
+            setInterval(func2, 10000);
+            setInterval(stop, 10000);
+        }
+
+        function time() {
+            var now = new Date();
+            var elapse = ((now - startTime) / 1000).toFixed(0);
+            document.getElementById("elapseTime").innerHTML = "경과된 시간 : " + elapse;
+        }
+
+        function stop() {
+            clearInterval(timer);
+            document.getElementById("elapseTime").innerHTML = "경과된 시간 : 0";
+        }
+
+        function func1() {
+            win1 = window.open("https://google.co.kr", "", "_blank");
+        }
+
+        function func2() {
+            win2 = window.open("https://nokomiz.github.io/lsh_web/", "", "_blank");
+        }
+
+    </script>
+</head>
+
+<body>
+    <p id="elapseTime"> 경과된 시간 : 0</p>
+    <input type="button" value="start" onclick="start()">
+</body>
+
+</html>
