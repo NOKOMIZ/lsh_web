@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<title>소수</title>
+<meta charset="utf-8">
+
+<head>
+    <script>
+        var input = 100;
+        var arr = [];
+        var answer = "";
+        for (var i = 2; i <= 100; i++) {
+            arr[i] = true;
+        }
+        var t = 2;
+        var bound = Math.floor(Math.sqrt(input))
+        while (t < bound) {
+            for (var i = t * 2; i <= input; i += t) {
+                arr[i] = false;
+            }
+            t++;
+        }
+        for (var i = 2; i <= 100; i++) {
+            if (arr[i])document.write(i + " ");
+        }
+        console.log(answer);
+
+    </script>
+</head>
+
+<body>
+    <p> 100까지의 소수 </p>
+</body>
+
+</html>

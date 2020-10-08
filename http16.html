@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>( 홀 / 짝 ) 구하기</title>
+    <meta charset="utf-8">
+    <script>
+        function check() {
+            var inp = parseInt(document.getElementById("num").value);
+            if (inp % 2) document.getElementById("value").innerHTML = inp + "는 홀수입니다."
+            else document.getElementById("value").innerHTML = inp + "는 짝수입니다."
+        }
+
+    </script>
+</head>
+
+<body>
+    <p>
+        어떤 수 입력 :
+        <input type="text" id="num">
+    </p>
+    <input type="button" value="확인" onclick="check()">
+    <br>
+
+    <p id="value"></p>
+</body>
+
+</html>

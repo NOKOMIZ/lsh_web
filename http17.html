@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> ' ! '</title>
+    <meta charset="utf-8">
+    <script>
+        function func() {
+            var inp = parseInt(document.getElementById("num").value);
+            var ans = ret(inp);
+            document.getElementById("ans").innerHTML = inp + "! = " + ans;
+        }
+
+        function ret(input) {
+            if (input <= 1) return 1;
+            else return input * ret(input - 1);
+        }
+
+        function func2() {
+            var inp = parseInt(document.getElementById("num").value);
+            var ans = 1;
+            var t = inp;
+            while(inp > 1){
+                ans *= inp;
+                inp--;
+            }
+            document.getElementById("ans").innerHTML = t + "! = " + ans;
+        }
+
+    </script>
+</head>
+
+<body>
+    <P>
+        팩토리얼을 구할 수를 입력하세요 :
+        <input type="text" id="num">
+    </P>
+    <input type="button" value="재귀사용" onclick="func()">
+    <input type="button" value="while문사용" onclick="func2()">
+    <p id="ans"></p>
+</body>
+
+</html>
