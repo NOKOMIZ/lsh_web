@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>draw5</title>
+    <meta charset="utf-8">
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.beginPath();     
+                
+                ctx.lineTo(100,10);
+                ctx.lineTo(10,100);
+                ctx.lineTo(10,10);
+                ctx.fill();
+                ctx.closePath();
+                
+                ctx.beginPath();     
+                
+                ctx.lineTo(120, 25);
+                ctx.lineTo(30,110);
+                ctx.lineTo(120,110);
+                ctx.lineTo(120,25);
+                ctx.stroke();
+                ctx.closePath();
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" height="500" width="500"></canvas>
+</body></html>
