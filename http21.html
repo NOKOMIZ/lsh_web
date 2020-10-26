@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>canvas 심화1</title>
+    <meta charset="utf-8">
+    <script>
+        function drawCircle() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            var x = canvas.width / 4;
+            var y = canvas.height / 4;
+            var radius = 30;
+            var startAngle = 0 * Math.PI / 180;
+            var endAngle = 270 * Math.PI / 180; 
+
+            context.beginPath();
+            context.arc(x, y, radius, startAngle, endAngle);
+            context.closePath();
+            context.stroke();
+
+
+            context.beginPath();
+            context.arc(3 * x, y, radius, startAngle, endAngle);
+            context.stroke();
+
+            context.beginPath();
+            context.arc(x, 3 * y, radius, startAngle, endAngle, true);
+            context.closePath();
+            context.stroke();
+
+            context.beginPath();
+            context.arc(3 * x, 3 * y, radius, startAngle,endAngle, true);
+            context.stroke();
+        }
+    </script>
+</head>
+
+<body onload="drawCircle();">
+    <div>
+        <canvas id="canvas" height="200" width="200"></canvas>
+    </div>
+
+</body>
+
+</html>
