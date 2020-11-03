@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>텍스트 / 이미지 표시</title>
+
+</head>
+
+<body>
+    <script>
+        function textUp() {
+            var canvas = document.getElementById("vas");
+            var context = canvas.getContext("2d");
+            context.font = "40px Comic Sans MS";
+            context.fillStyle = "green";
+            context.textAlign = "center";
+            context.fillText("2416 Lee Soo Hwan", canvas.width / 2, canvas.height / 2);
+            
+            var textbuttonInput = document.getElementById("textbutton").innerHTML;
+            
+            if(textbuttonInput == "Text OFF"){
+                context.clearRect(0,0,canvas.width, canvas.height);
+                document.getElementById("textbutton").innerHTML = "Text ON";
+
+            }
+            else{
+                document.getElementById("textbutton").innerHTML = "Text OFF";
+                
+            }
+        }
+
+        function imageUp() {
+            var canvas = document.getElementById("vas");
+            var context = canvas.getContext("2d");
+            var ima = document.getElementById("Img");
+            context.drawImage(ima,1,1);
+            
+            var textbuttonInput = document.getElementById("imagebutton").innerHTML;
+            
+            if(textbuttonInput == "Image OFF"){
+                context.clearRect(0,0,canvas.width, canvas.height);
+                document.getElementById("imagebutton").innerHTML = "Image ON";
+            }
+            else{
+                document.getElementById("imagebutton").innerHTML = "Image OFF";
+            }
+            
+        }
+    </script>
+    <button id="textbutton" onclick="textUp()">Text ON</button>
+    <button id="imagebutton" onclick="imageUp()">Image ON</button>
+    <br><br>
+    <div>
+        <img id="Img" src="ball.jpg" style="display:none">
+    </div>
+    <div>
+        <canvas id="vas" width="512" height="384" style="border:1px solid #000000"></canvas>
+    </div>
+
+</body></html>
